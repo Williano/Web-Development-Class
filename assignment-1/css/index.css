@@ -1,0 +1,47 @@
+
+body {
+    background-color:#ffcc99;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+#shipping-notice {
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.categories {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    border: 3px solid green;
+
+}
+
+.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.desc {
+    text-align: right;
+    padding: 15px;
+    text-align: center;
+}
