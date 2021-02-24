@@ -70,8 +70,8 @@ body {
 .wrapper {
 
     display: flex;
-    flex-direction: row;            /* default value; can be omitted */
-    flex-wrap: nowrap;              /* default value; can be omitted */
+    flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
     margin-top: 60px;
   }
@@ -81,7 +81,7 @@ body {
     float: left;
     width: 20%;
     border: 3px solid black;
-    display: block;
+    display: table-cell;
 }
 
 #content {
@@ -117,4 +117,30 @@ body {
     border: 3px solid black;
 }
 
+.container img {
+    width:70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
 
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+
+ .centered {
+    text-align: center;
+    font-weight: bold;
+    font-size: 8px;
+    font-size: 20px;
+    color: blue;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    margin-left: auto;
+    margin-right: auto;
+  }
