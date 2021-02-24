@@ -9,10 +9,10 @@ body {
 
 #banner {
   display: flex;
-  flex-direction: row; /* default value; can be omitted */
-  flex-wrap: nowrap; /* default value; can be omitted */
+  flex-direction: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
-  background-image: url("/images/home/bg_head2.bmp");
+  background-image: url("../images/home/bg_head2.bmp");
   background-repeat: repeat;
   background-size: cover;
   height: 120px;
@@ -29,7 +29,6 @@ body {
   width: 100px;
   height: 100px;
   font-family: "Script MT Bold";
-  src: url("//db.onlinewebfonts.com/t/b1f909b1cb3adb801a92229ea92613e1.eot");
 }
 
 .menu {
