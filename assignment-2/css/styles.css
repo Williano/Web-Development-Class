@@ -1,34 +1,35 @@
 body {
-    background-color:#ffcc99;
-   text-align: center;
+  background-color: #ffcc99;
+  text-align: center;
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 h2 {
-    text-align: center;
+  text-align: center;
 }
 table {
-    margin-left: auto;
-    margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 table {
-    border: 3px outset;
+  border: 3px outset;
 }
 
-th, td {
-    border: 2px inset;
+th,
+td {
+  border: 2px inset;
 }
 td {
-    max-height: 200px;
-    max-width: 200px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 img {
-    display: block;
-    width: 100%;
-    height: inherit;
+  display: block;
+  width: 100%;
+  height: inherit;
 }
