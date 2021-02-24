@@ -10,6 +10,8 @@ body {
 .product-name {
   color: red;
   font-style: italic;
+  font-weight: bolder;
+  font-size: 20px;
   font-family: "Lucida Calligraphy";
   src: url("//db.onlinewebfonts.com/t/4053837519f2a20cd733848fc1f9aa03.eot");
 }
