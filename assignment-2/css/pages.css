@@ -1,0 +1,35 @@
+@import url(//db.onlinewebfonts.com/c/4053837519f2a20cd733848fc1f9aa03?family=Lucida+Calligraphy);
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffcc99;
+  text-align: center;
+}
+
+.product-name {
+  color: red;
+  font-style: italic;
+  font-family: "Lucida Calligraphy";
+  src: url("//db.onlinewebfonts.com/t/4053837519f2a20cd733848fc1f9aa03.eot");
+}
+
+.price,
+.quantity {
+  font-style: italic;
+  color: black;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+#username {
+  width: 40px;
+}
+
+.button-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  background-size: cover;
+}
