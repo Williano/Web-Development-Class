@@ -1,0 +1,31 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    text-align: left;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 20px;
+}
+
+input {
+    width: 300px;
+}
