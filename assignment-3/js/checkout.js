@@ -1,12 +1,18 @@
-// $("#form").validate({
-//   onkeyup: function (element, event) {
-//     if (event.which === 9) {
-//       this.element(element);
-//     } else {
-//       return;
-//     }
-//   },
-// });
+var body = document.querySelector("body");
+body.addEventListener("keyup", checkTabPress);
+
+function checkTabPress(e) {
+  if (e.keyCode == 9) {
+    var regex = RegExp("d{ 1, 5}sw.s(\bw *\bs) { 1, 2 } w *.");
+    streetAddress = document.getElementById("street-address").value;
+
+    if (regex.test(streetAddress)) {
+      return true;
+    } else {
+      alert("Incorrect Address! Re-enter a valid address!");
+    }
+  }
+}
 
 function validateCreditCard() {
   var cardNumber = document.getElementById("card-number").value;
