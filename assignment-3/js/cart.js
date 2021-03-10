@@ -58,7 +58,7 @@ function getCartItems() {
         "<br>" +
         "<img src= " +
         item.productImage +
-        'height="80px" width="80px">' +
+        '  height="80px" width="80px">' +
         "<br>" +
         '<button onclick="removeItem()">Remove</button>' +
         "</td><td>" +
