@@ -46,39 +46,49 @@ function getCartItems() {
   var cart = JSON.parse(sessionStorage.getItem("cart"));
   var content = document.getElementById("tableBody");
 
-  content.innerHTML = cart
-    .map((item, index) => {
-      var productPrice = parseFloat(item.productPrice).toFixed(2);
-      var productQuantity = parseFloat(item.productQuantity).toFixed(2);
+  if (cart.length > 0 || cart != null) {
+    content.innerHTML = cart
+      .map((item, index) => {
+        var productPrice = parseFloat(item.productPrice);
+        var productQuantity = parseInt(item.productQuantity, 10);
 
-      var productTotal = productPrice * productQuantity;
+        console.log(productPrice);
+        var productTotal = productPrice * productQuantity;
 
-      return (
-        "<tr><td>" +
-        index +
-        "</td><td>" +
-        item.productName +
-        "<br>" +
-        "<img src= " +
-        item.productImage +
-        '  height="80px" width="80px">' +
-        "<br>" +
-        "<button  onclick=" +
-        '"removeItem(' +
-        item.productName +
-        ')"' +
-        ">Remove</button>" +
-        "</td><td>" +
-        item.productPrice +
-        "</td><td>" +
-        item.productQuantity +
-        "</td><td>" +
-        +"</td></tr>"
-      );
-    })
-    .join("");
+        return (
+          "<tr><td>" +
+          index +
+          "</td><td>" +
+          item.productName +
+          "<br>" +
+          "<img src= " +
+          item.productImage +
+          '  height="80px" width="80px">' +
+          "<br>" +
+          "<button  onclick=" +
+          '"removeItem(' +
+          item.productName +
+          ')"' +
+          ">Remove</button>" +
+          "</td><td>" +
+          item.productPrice +
+          "</td><td>" +
+          item.productQuantity +
+          "</td><td>" +
+          parseFloat(productTotal).toFixed(2) +
+          "</td></tr>"
+        );
+      })
+      .join("");
+  } else {
+    alert("Empty Cart - Please Buy Something First");
+  }
 }
 
 function removeItem(itemName) {
   console.log(itemName);
+}
+
+function cartTotal() {
+  var cart = JSON.push(sessionStorage.getItem("cart"));
 }
