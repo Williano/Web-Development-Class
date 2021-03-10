@@ -10,6 +10,7 @@ td {
 }
 
 table {
+  margin-left: auto;
+  margin-right: auto;
   border: 2px outset;
-  width: 100%;
 }

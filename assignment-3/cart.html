@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="./css/cart.css">
 </head>
 
-<body onload="getCartItems()">
+<body onload="callFunctions()">
 
     <h1>Shopping Cart Review</h1>
 
-    <table>
+    <table id="my-table">
 
         <thead>
             <tr>
@@ -29,12 +29,16 @@
         <tbody id="tableBody">
         </tbody>
 
-        <tfoot id="tableFooter"></tfoot>
+        <tfoot id="tableFooter">
+            <td>TOTAL</td>
+
+            <td colspan="4" style="text-align: right;" id="cart-total"></td>
+        </tfoot>
 
     </table>
 
     <br>
-    <button onclick="location.href='checkout.html'"><img class="button-image"
+    <button onclick=" location.href='checkout.html'"><img class=" button-image"
             src="./images/checkout.gif"></button>
 
     <br> <br>

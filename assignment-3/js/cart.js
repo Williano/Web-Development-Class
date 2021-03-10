@@ -52,7 +52,6 @@ function getCartItems() {
         var productPrice = parseFloat(item.productPrice);
         var productQuantity = parseInt(item.productQuantity, 10);
 
-        console.log(productPrice);
         var productTotal = productPrice * productQuantity;
 
         return (
@@ -61,15 +60,15 @@ function getCartItems() {
           "</td><td>" +
           item.productName +
           "<br>" +
-          "<img src= " +
+          '<img class="product-image" src= ' +
           item.productImage +
           '  height="80px" width="80px">' +
           "<br>" +
           "<button  onclick=" +
           '"removeItem(' +
           item.productName +
-          ')"' +
-          ">Remove</button>" +
+          ')">' +
+          "Remove</button>" +
           "</td><td>" +
           item.productPrice +
           "</td><td>" +
@@ -95,5 +94,24 @@ function removeItem(itemName) {
 }
 
 function cartTotal() {
-  var cart = JSON.push(sessionStorage.getItem("cart"));
+  var totalCell = document.getElementById("cart-total");
+
+  var cart = JSON.parse(sessionStorage.getItem("cart"));
+
+  var total = 0;
+  cart.map((item, index) => {
+    var productPrice = parseFloat(item.productPrice);
+    var productQuantity = parseInt(item.productQuantity, 10);
+
+    var productTotal = productPrice * productQuantity;
+
+    total = total + productTotal;
+  });
+  totalCell.innerHTML =
+    "<span>" + "$" + "</span>" + parseFloat(total).toFixed(2);
+}
+
+function callFunctions() {
+  getCartItems();
+  cartTotal();
 }

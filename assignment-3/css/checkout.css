@@ -29,3 +29,8 @@ img {
 input {
   width: 300px;
 }
+
+.product-image {
+  height: 80px;
+  width: 80px;
+}
