@@ -44,11 +44,14 @@ function addToCart() {
 
 function getCartItems() {
   var cart = JSON.parse(sessionStorage.getItem("cart"));
-  var content = document.getElementById("cartTable");
+  var content = document.getElementById("tableBody");
 
   content.innerHTML = cart
     .map((item, index) => {
-      var productTotal = item.productPrice * item.productQuantity;
+      var productPrice = parseFloat(item.productPrice).toFixed(2);
+      var productQuantity = parseFloat(item.productQuantity).toFixed(2);
+
+      var productTotal = productPrice * productQuantity;
 
       return (
         "<tr><td>" +
@@ -60,17 +63,22 @@ function getCartItems() {
         item.productImage +
         '  height="80px" width="80px">' +
         "<br>" +
-        "<button onclick=" +
-        removeItem() +
+        "<button  onclick=" +
+        '"removeItem(' +
+        item.productName +
+        ')"' +
         ">Remove</button>" +
         "</td><td>" +
         item.productPrice +
         "</td><td>" +
         item.productQuantity +
         "</td><td>" +
-        productTotal +
-        "</td></tr>"
+        +"</td></tr>"
       );
     })
     .join("");
+}
+
+function removeItem(itemName) {
+  console.log(itemName);
 }

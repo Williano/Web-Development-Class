@@ -7,7 +7,7 @@
     <title>Checkout</title>
 </head>
 
-<body>
+<body onload="getCartItems()">
     <form action="http://localhost:8090/" method="POST">
         <h1>Enter Customer Info Below</h1>
         <table>
@@ -121,6 +121,29 @@
             </tr>
         </table>
 
+        <h1>Shopping Cart</h1>
+
+        <table style="border: 2px outset !important;
+  ">
+
+            <thead style="border: 1px inset !important;">
+                <tr style="">
+                    <th>Catalog #</th>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody">
+            </tbody>
+
+            <tfoot id="tableFooter"></tfoot>
+
+        </table>
+
+
         <h1>Enter Card Number and Expiration</h1>
         <table>
             <tr>
@@ -128,8 +151,9 @@
                     Credit Card Number
                 </td>
                 <td>
-                    <input type="text" name="card_number" pattern="[0-9]{16}"
-                        style="width:200px" required />
+                    <input id="card-number" type="text" name="card_number"
+                        pattern="[0-9]{16}" style="width:200px" required
+                        onchange="validateCreditCard()" />
                 </td>
             </tr>
             <tr>
@@ -164,6 +188,11 @@
             type="reset" value="Reset" name="reset_button"
             style="width: auto" /><br /><br /><br />
         <form />
+
+
+        <script src="./js/cart.js"></script>
+
+        <script src="./js/checkout.js"></script>
 </body>
 
 </html>
