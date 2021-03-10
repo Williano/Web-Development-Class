@@ -14,3 +14,8 @@ table {
   margin-right: auto;
   border: 2px outset;
 }
+
+.product-image {
+  height: 80px;
+  width: 80px;
+}
