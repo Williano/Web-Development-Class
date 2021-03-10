@@ -1,23 +1,36 @@
 function addToCart() {
-  var cart = {};
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+  let item = {};
 
   var productName = document.getElementsByClassName("product-name")[0]
     .innerHTML;
   var productImage = document.getElementsByTagName("img")[0].src;
-  var productPrice = document.getElementById("product-price").innerHTML;
+  var productPrice = document.getElementsByClassName("product-price")[0]
+    .innerHTML;
   var productQuantity = document.getElementById("quantity").value;
 
   if (productQuantity == "") {
     alert("Product quantity should not be empty");
   } else {
-    cart["productName"] = productName;
-    cart["productImage"] = productImage;
-    cart["productPrice"] = productPrice;
-    cart["productQuantity"] = productQuantity;
+    item["productName"] = productName;
+    item["productImage"] = productImage;
+    item["productPrice"] = productPrice;
+    item["productQuantity"] = productQuantity;
 
-    sessionStorage.setItem("cart", JSON.stringify(cart));
+    const itemExist = cart.some(
+      (product) => product.productName === productName
+    );
 
-    alert("Item added to cart successfully.");
+    if (itemExist) {
+      alert(`${productName} alread exist!`);
+    } else {
+      cart.push(item);
+
+      sessionStorage.setItem("cart", JSON.stringify(cart));
+
+      console.log(cart);
+      alert("Item added to cart successfully.");
+    }
 
     var userInput = confirm(`Add ${productName} to cart?`);
 
