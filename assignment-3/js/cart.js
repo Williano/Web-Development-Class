@@ -56,7 +56,7 @@ function getCartItems() {
         "</td><td>" +
         product.productName +
         "<br/>" +
-        'img src="`${productImage}`" alt="productImage" />' +
+        'img src="`${productImage}`" alt="productImage" width="80" height="80"/>' +
         "<br />" +
         '<button onclick="removeItem()">Remove</button>' +
         "</td><td>" +

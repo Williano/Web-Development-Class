@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/cart.css">
 </head>
 
-<body>
+<body onload="getCartItems()">
 
     <h1>Shopping Cart Review</h1>
 
@@ -25,6 +25,11 @@
 
 
     </table>
+
+    <button onclick="addToCart()"><img class="button-image"
+            src="./images/checkout.gif"></button>
+
+    <a href="store_index.html">Continue Shopping</a>
 
     <script src="./js/cart.js"></script>
 </body>
