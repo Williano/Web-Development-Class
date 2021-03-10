@@ -46,23 +46,25 @@ function getCartItems() {
   var cart = JSON.parse(sessionStorage.getItem("cart"));
   var content = document.getElementById("cartTable");
 
-  productTotal = productPrice * productQuantity;
-
   content.innerHTML = cart
-    .map((product, index) => {
+    .map((item, index) => {
+      var productTotal = item.productPrice * item.productQuantity;
+
       return (
         "<tr><td>" +
         index +
         "</td><td>" +
-        product.productName +
-        "<br/>" +
-        'img src="`${productImage}`" alt="productImage" width="80" height="80"/>' +
-        "<br />" +
+        item.productName +
+        "<br>" +
+        "<img src= " +
+        item.productImage +
+        'height="80px" width="80px">' +
+        "<br>" +
         '<button onclick="removeItem()">Remove</button>' +
         "</td><td>" +
-        product.productPrice +
+        item.productPrice +
         "</td><td>" +
-        product.productQuantity +
+        item.productQuantity +
         "</td><td>" +
         productTotal +
         "</td></tr>"
