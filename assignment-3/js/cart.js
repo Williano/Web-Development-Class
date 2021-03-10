@@ -46,7 +46,11 @@ function getCartItems() {
   var cart = JSON.parse(sessionStorage.getItem("cart"));
   var content = document.getElementById("tableBody");
 
-  if (cart.length > 0 || cart != null) {
+  if (cart.length == 0) {
+    alert("Empty Cart - Please Buy Something First");
+
+    location.href = "../../store_index.html";
+  } else {
     content.innerHTML = cart
       .map((item, index) => {
         var productPrice = parseFloat(item.productPrice);
@@ -84,8 +88,6 @@ function getCartItems() {
         );
       })
       .join("");
-  } else {
-    alert("Empty Cart - Please Buy Something First");
   }
 }
 
