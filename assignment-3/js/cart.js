@@ -75,7 +75,12 @@ function getCartItems() {
           "</td><td>" +
           item.productQuantity +
           "</td><td>" +
+          "<span>" +
+          "$" +
+          "</span>" +
+          '<span id="productTotal">' +
           parseFloat(productTotal).toFixed(2) +
+          "</span>" +
           "</td></tr>"
         );
       })
