@@ -6,43 +6,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart Review</title>
+
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 
 <body>
 
     <h1>Shopping Cart Review</h1>
 
-    <form id="shopping-cart" action="cart.html" method="post">
-        <table class="shopping-cart">
-            <thead>
-                <tr>
-                    <th scope="col">Item</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Price</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-        <p id="sub-total">
-            <strong>Sub Total</strong>: <span id="stotal"></span>
-        </p>
-        <ul id="shopping-cart-actions">
-            <li>
-                <input type="submit" name="update" id="update-cart" class="btn"
-                    value="Update Cart" />
-            </li>
-            <li>
-                <input type="submit" name="delete" id="empty-cart" class="btn"
-                    value="Empty Cart" />
-            </li>
-            <li>
-                <a href="index.html" class="btn">Continue Shopping</a>
-            </li>
-            <li>
-                <a href="store_index.html" class="btn">Go To Checkout</a>
-            </li>
-        </ul>
-    </form>
+    <table id="cartTable">
+        <tr>
+            <th>Catalog #</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+            <td>50</td>
+            <td>50</td>
+
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+            <td>Jackson</td>
+            <td>94</td>
+
+
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+
+    </table>
 
 </body>
 
