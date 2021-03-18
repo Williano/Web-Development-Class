@@ -1,0 +1,175 @@
+@font-face {
+  font-family: "Script MT Bold";
+  src: url("http://db.onlinewebfonts.com/t/b1f909b1cb3adb801a92229ea92613e1.eot"); /* IE9*/
+  src: url("http://db.onlinewebfonts.com/t/b1f909b1cb3adb801a92229ea92613e1.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("http://db.onlinewebfonts.com/t/b1f909b1cb3adb801a92229ea92613e1.woff2")
+      format("woff2"),
+    /* chrome firefox */
+      url("http://db.onlinewebfonts.com/t/b1f909b1cb3adb801a92229ea92613e1.woff")
+      format("woff"),
+    /* chrome firefox */
+      url("http://db.onlinewebfonts.com/t/b1f909b1cb3adb801a92229ea92613e1.ttf")
+      format("truetype"),
+    /* chrome firefox opera Safari, Android, iOS 4.2+*/
+      url("http://db.onlinewebfonts.com/t/b1f909b1cb3adb801a92229ea92613e1.svg#Script MT Bold")
+      format("svg"); /* iOS 4.1- */
+}
+
+body {
+  background-color: #5e0e03;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-image: url("../images/home/bg_head2.bmp");
+  background-repeat: repeat;
+  background-size: cover;
+  height: 120px;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+}
+
+#img1 {
+  margin-left: 70px;
+}
+
+#h2-text {
+  color: white;
+  width: 100px;
+  height: 100px;
+  font-family: "Script MT Bold";
+}
+
+.menu {
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+#sidebar-menu {
+  float: left;
+  width: 20%;
+  border: 3px solid black;
+  display: table-cell;
+}
+
+#content {
+  float: left;
+  width: 50%;
+  border: 3px solid black;
+  background-color: #cccccc;
+}
+
+#sidebar-address {
+  float: left;
+  width: 20%;
+  border: 3px solid black;
+  background-color: white;
+}
+
+.mission {
+  margin: 0 15px;
+  font-weight: bold;
+  text-align: justify;
+}
+
+#content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  border: 3px solid black;
+}
+
+.container img {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered {
+  text-align: center;
+  font-weight: bold;
+  font-size: 8px;
+  font-size: 20px;
+  color: blue;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dropbtn {
+  background-color: #5e0e03;
+  color: white;
+  font-family: Arial !important;
+  font-size: 11px !important;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 3px solid black;
+  margin: -4px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #5e0e03;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-family: Arial !important;
+  font-size: 11px !important;
+  text-align: left;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(94, 14, 3);
+  color: red;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #5e0e03;
+}
