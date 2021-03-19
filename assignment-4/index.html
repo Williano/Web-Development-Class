@@ -10,7 +10,7 @@
 
 </head>
 
-<body>
+<body onload="slideShow()">
 
     <div id="banner">
         <img id="img1" src="images/home/PolarBearsFirePartyGrillingAnimated.gif"
@@ -129,7 +129,9 @@
             </div>
 
 
-            <img src="images/home/caribou2.bmp" alt="caribou2">
+            <img id="slider" src="images/pics/0.jpg" alt="slideshow">
+            <center id="caption">Caribou Migration</center>
+            <br>
         </div>
         <div id="sidebar-address">
             <h2>
@@ -156,6 +158,10 @@
             <hr>
         </div>
     </div>
+
+
+    <!-- Scripts-->
+    <script src="js/slideshow.js"></script>
 </body>
 
 </html>
