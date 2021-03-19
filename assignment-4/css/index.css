@@ -173,3 +173,15 @@ body {
 .dropdown:hover .dropbtn {
   background-color: #5e0e03;
 }
+
+#slider {
+  opacity: 1;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+}
+
+#slider.fadeOut {
+  opacity: 0;
+}
