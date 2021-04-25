@@ -1,0 +1,21 @@
+body {
+  background-color: #ffcc99;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px inset;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px outset;
+}
+
+.product-image {
+  height: 80px;
+  width: 80px;
+}

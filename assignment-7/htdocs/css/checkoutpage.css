@@ -1,0 +1,18 @@
+body {
+  background-color: lightblue;
+}
+
+.wrapper {
+  text-align: center;
+  margin: 0px 0px 100px 0px;
+}
+
+#product_title {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.credit_card_image {
+  width: 30px;
+  height: 20px;
+}

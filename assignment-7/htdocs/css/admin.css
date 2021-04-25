@@ -1,0 +1,41 @@
+body {
+  background-color: #f0f1f1;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+}
+
+input[type="text"] {
+  width: 500px;
+  height: 40px;
+  border: 2px solid #ccc;
+  margin-bottom: 5px;
+}
+
+.blog-body {
+  background-color: #cccccc;
+  height: 300px;
+  width: 550px;
+}
+
+.button {
+  float: right;
+}
+
+.reset {
+  float: left;
+}
+
+.info {
+  border: 2px solid black;
+}
+
+.bio {
+  margin: 7px;
+}
