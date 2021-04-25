@@ -1,0 +1,49 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrative Blog Form</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+    <h1>Administrative Blog Form</h1>
+
+    <form method="POST" action="/process.php" enctype="multipart/form-data">
+        <div class="info">
+            <div class="bio">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" />
+                </div>
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" name="title" />
+                </div>
+
+                <div class="form-group">
+                    <label style="float: left;">Image</label>
+                    <input type="file" name="image" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <h2>Enter Blog Below</h2>
+            <textarea class="blog-body" name="body"></textarea>
+        </div>
+        <br>
+        <br>
+        <div style="float: right;" class="form-group">
+            <button type="submit" name="submit">submit</button>
+        </div>
+
+        <div style="float: left;" class="form-group">
+            <button type="reset" name="reset">reset</button>
+        </div>
+    </form>
+</body>
+
+</html>

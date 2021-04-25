@@ -1,0 +1,8 @@
+body {
+  background-color: #f0f1f1;
+}
+
+.hr-dot {
+  border-top: 1px dashed #bcbdbd;
+  width: 100% !important;
+}

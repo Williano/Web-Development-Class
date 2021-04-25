@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/checkoutpage.css">
+    <title>Checkout</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="order.php" method="post">
+            <h2>Enter Customer Info Below</h2>
+            <div>
+                <span><input id='product_id' name='product_id'
+                        type='hidden' /></span>
+                <span><input id='current_quantity' name='current_quantity'
+                        type='hidden' /></span>
+                <span><input id='purchase_quantity' name='purchase_quantity'
+                        type='hidden' /></span>
+            </div>
+            <div>
+                First Name <span><input id='name_first' name='name_first'
+                        type='text' /></span><br /><br />
+            </div>
+            <div>
+                Last Name <span><input id='name_last' name='name_last'
+                        type='text' /></span><br /><br />
+            </div>
+            <div>
+                Email <span><input id='email' name='email'
+                        type='email' /></span><br /><br />
+            </div>
+            <div>
+                Address 1 <span><input id='address1' name='address1'
+                        type='text' /></span><br /><br />
+            </div>
+            <div>
+                Address 2 <span><input id='address2' name='address2'
+                        type='text' /></span><br /><br />
+            </div>
+            <div>
+                City <span><input id='city' name='city'
+                        type='text' /></span><br /><br />
+            </div>
+            <div>
+                State <span><input id='state' name='state'
+                        type='text' /></span><br /><br />
+            </div>
+            <div>
+                ZIP <span><input id='zip' name='zip'
+                        type='number' /></span><br /><br />
+            </div>
+            <div>
+                Country <span><input id='country' name='country'
+                        type='text' /></span><br /><br />
+            </div>
+            <div>
+                Phone <span><input id='phone' name='phone'
+                        type='tel' /></span><br /><br />
+            </div>
+            <div>
+                Fax <span><input id='fax' name='fax' type='tel'
+                        pattern="[0-9]{11}" /></span><br /><br />
+            </div>
+            <div>
+                <input id='mailing_list' name='mailing_list'
+                    type='checkbox' />Check here to be added to the mailing
+                list</span><br />
+            </div>
+
+            <!-- Purchased Item -->
+            <div class="purchased_item">
+                <h1>Purchased Item</h2>
+                    <img id='product_image' class="product-image" src=''
+                        width='150' />
+                    <h1 id='product_title'>
+                        </h2>
+                        <h3>Quantity: <span id='product_quantity'></span></h3>
+                        <!-- <h3><span id='product_description'></span></h3> -->
+                        <h3>Price: <span id='product_price'></span></h3>
+                        <h3>Total: <span id='product_total'></span></h3>
+            </div>
+
+            <!-- Credit Card Info -->
+            <div class="credit_card_info">
+                <h2>Enter Credit Card Information Below</h2>
+                <input id='check_master_card' type='radio'
+                    name="creditCard" /><span><img src="images/checkout/mc.jpg"
+                        class="credit_card_image" /></span>
+                Card</span><br />
+                <input id='check_visa' type='radio'
+                    name="creditCard" /><span><img
+                        src="images/checkout/visa.jpg"
+                        class="credit_card_image" /></span> Visa</span><br />
+                <input id='check_american_express' type='radio'
+                    name="creditCard" /><span><img
+                        src="images/checkout/amex.jpg"
+                        class="credit_card_image" /></span> American
+                Express</span><br />
+                <input id='check_discover' type='radio'
+                    name="creditCard" /><span><img
+                        src="images/checkout/discover.jpg"
+                        class="credit_card_image" /></span>
+                Discover</span><br /><br />
+                <h3>Enter Card Number and Expiration</h3>
+                Credit Card Number <span><input id="card-number" type="text"
+                        name="card_number" style="width:200px" required
+                        onchange="validateCreditCard()" /></span><br />
+                Expiration Month <span><select id='expiration_month'
+                        name='expiration_month'></select></span><br />
+                Expiration Year <span><select id='expiration_year'
+                        name='expiration_year'></select></span><br /><br />
+                <button type="submit">Buy Now!</button>
+                <button type="reset"
+                    style="margin-left: 16px;">Reset</button><br /><br />
+                <a href="javascript: history.go(-1)">Return to Previous</a>
+            </div>
+        </form>
+
+    </div>
+    <script src="find_get_parameter.js"></script>
+    <script>
+
+        function validateCreditCard() {
+            var cardNumber = document.getElementById("card-number").value;
+
+            if (cardNumber.length === 16) {
+                return;
+            } else {
+                alert("Invalid Credit Card!!! Credit Card Must be 16 digits");
+            }
+        }
+
+        // retrieve get parameters
+        const product_id = find_get_parameter('id_no');
+        const product_image = find_get_parameter('image');
+        const product_title = find_get_parameter('title');
+        const product_quantity = find_get_parameter('quantity');
+        const product_price = find_get_parameter('price');
+
+        // get user entered product quantity
+        let user_entered_product_quantity = sessionStorage.getItem('user_entered_product_quantity')
+        // update product info
+        document.getElementById('product_image').src = product_image;
+        document.getElementById('product_title').innerHTML = product_title;
+        document.getElementById('product_quantity').innerHTML = sessionStorage.getItem('user_entered_product_quantity');
+        document.getElementById('product_price').innerHTML = product_price;
+        document.getElementById('product_total').innerHTML = parseFloat(product_price) * user_entered_product_quantity + "";
+
+        document.getElementById('product_id').value = product_id;
+        document.getElementById('current_quantity').value = product_quantity;
+        document.getElementById('purchase_quantity').value = sessionStorage.getItem('user_entered_product_quantity');
+
+
+
+        // auto generate months in a year for expiration month
+        let element_expiration_month = document.getElementById('expiration_month');
+        let months = '';
+        for (let month = 1; month <= 12; month++) {
+            months += `<option value=${month}> ${month} </option>`;
+        }
+        element_expiration_month.innerHTML = months;
+
+        // auto generate years for expiration year
+        let element_expiration_year = document.getElementById('expiration_year');
+        let years = '';
+        for (let year = 2021; year <= 2050; year++) {
+            years += `<option value=${year}> ${year} </option>`;
+        }
+        element_expiration_year.innerHTML = years;
+
+        // after form submission
+        const status = sessionStorage.getItem('status');
+
+        if (status !== null) {
+            if (status === 'success') {
+                setTimeout(() => alert('Order has been processed successfully'), 1000);
+            } else {
+                setTimeout(() => alert(status), 1000);
+            }
+
+            sessionStorage.removeItem('status');
+        }
+
+    </script>
+</body>
+
+</html>
